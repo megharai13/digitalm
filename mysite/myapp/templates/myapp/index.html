@@ -1,9 +1,28 @@
 {% extends 'myapp/base.html' %}
 {% block body %}
-{% for product in products %}
-{{ product.name }}
-${{ product.price }}
-{{ product.description }}
-<br>
-{% endfor %}
+<div class="product-container flex">
+    {% for product in products %}
+    <div class="product shadow-lg w-1/4 rounded-lg m-10">
+        <div class="product-image">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAACGCAMAAAAvpwKjAAAANlBMVEXOzs6srKzBwcHR0dGwsLC5ubnFxcXLy8vIyMi+vr60tLSlpaWpqamRkZGfn5+ampqJiYnZ2dkcCJ44AAADc0lEQVR4nO2Y647kKAxGAYO5Bk+//8vuZ+qyVT0z0v4YqNHKR10phYo6J8YYgnOGYRiGYRiGYRiGYRiGYfyt5FoDl5I/rZFu1Fo/aVPSK3XF5gMyjHtzqPVVJpzXCCkV/c65qM3S4fMa9a5xJ5f6KY38vaH85tp96ED53lDPp2hpv9A4buG4tbe7ZjSk3128B4yNXGNEQhLf0iG0EGI8OV4zcwjBLQ3ItKwdhJN6VEMdAOHOhXGItSQcY04rPKcoy4KXhlo8cNpwTiPfNJwG4EWjQaOdHK9Lo2SPh38JRsqqcpCVHI59TJS5poaQeO8TQ+WkxuoVFxCNltZSo+jUVqr3Z6vX0kj+QUTZYkbDODvNrwxt/pUxBg5nJ7ayBor/iXHUQpMDGuNnDzrrgfGKkGCMrN54+sTDGqx1Q0uVrv8qRuyyGUfLhnsU0sC8luKkEy7qx9H59UUjvL0R0OEucbdC+pGXknfyX+BgGIbxH6lY1AQtWnyfO7DiWh8X+NlKWIvk+8JoC/lHJ7oC5Skiusyi0SnLlYmvgenk1tjwo3d8ifRNGiKJJJB4onjhvuRVYybodHJBeiNKsMJPfG2b6PLVhITzpV2hB9Uo0jxJmjDzCTIdKx8sRPjCin2XhpMqXNQAB1oaLDx5hkluVkavIGDpmtCYM27TCDKDuypR/eHcXYNmb0Ecy5xXInQP2vZ2SqaOKHgJLOOeG0HIXwUybSJlJ9WrlXpBI/Cul3vJt5xoMteiE+lA6I6KmEzS/KxI3NC1OwrGi2xakNDjQ/eA69fjj95/fV7zv+XxvG8tbw23CDxCtSccRXeUWnEUGrmk2VEalfurydqaDGtrMK+mEGMMG0RQOQeRIBP7QPHUyo2UxMhcinpOfTaJVLSJ2jV62hGPGSUTCmlGQa8oFvSvBqWOmk49fiV5aMyvLb2CoiQVdaJUwXO3NF+j0VND3cLz45K7hrQd24L4vzzxxi51eASkJSn01CiSGkI1epxjs8acfSIOfqBPMJt2VO6bBmlYekcc0CnlKkWboLGlU3QyK1htYCWRtYp/rcqN05Qwk/gvnU16r11zQ5saArRhQ65G1GbdYvMJk0clx8MxyrjubpAPGMad0vAtu6JbDBR0n2HHgP32eZRxLVPPc3or539ewjAMwzAMwzAMwzAMwzAMw/ij/AMjXx+aqv2pHwAAAABJRU5ErkJggg=="
+                alt="">
+        </div>
+        <div class="p-5">
+            <div class="font-bold">
+                {{ product.name }}
+            </div>
+            <div>
+                {{ product.description }}
+            </div>
+            <div class="text-green-700">
+                {{ product.price }}
+            </div>
+            <div class="mt-5">
+                <a href="" class="bg-green-500 text-white px-4 py-2">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
