@@ -1,4 +1,9 @@
 {% extends 'myapp/base.html' %}
 {% block body %}
-This is index page
+{% for product in products %}
+{{ product.name }}
+${{ product.price }}
+{{ product.description }}
+<br>
+{% endfor %}
 {% endblock %}
